@@ -1,0 +1,369 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/color.jpg');
+    font-family: 'Coda', cursive;
+    color: #393939;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    color: blue;
+    font-weight: bold;
+    background-color: red;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(red, yellow);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+    list-style-type: none;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.deck .card.wrong {
+  background: #fa5050;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 545px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    color: #ffcd00;
+}
+
+.score-panel .stars li {
+    list-style-type: none;
+    display: inline;
+}
+
+.score-panel .restart {
+    cursor: pointer;
+}
+
+#restart i {
+  padding-left: 5px;
+}
+
+#timer {
+  display: inline-block;
+}
+
+#timer {
+  color: blue;
+  font-weight: bold;
+  font-size: 22px;
+  background-color: yellow;
+}
+
+#restart-text {
+  color: blue;
+  background-color: yellow;
+  font-weight: bold;
+  font-size:22px;
+}
+
+ #movesText {
+  color: blue;
+  background-color: yellow;
+  font-weight: bold;
+  font-size:22px;
+}
+ #moves {
+  color: blue;
+  background-color: yellow;
+  font-weight: bold;
+  font-size:22px;
+}
+
+
+/* Winning Popup */
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 0; /* Location of the box */
+    margin: 0 auto;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.popup-content {
+    background: linear-gradient(red , yellow);
+    margin: 0 auto;
+    height: 60%;
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Helvetica';
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 1.5s;
+    animation-name: animatetop;
+    animation-duration: 1.5s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.popup-content h1 {
+  font-size: 20px;
+  padding-top: 4em;
+  color: blue;
+  font-weight: bolder;
+}
+
+.popup-content h3 {
+  font-weight: normal;
+  color: blue;
+}
+
+#play-again {
+  background-color: #8c4ed6;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  box-shadow: 7px 7px 30px #999999;
+  transition: box-shadow 0.5s;
+}
+
+#play-again:hover {
+  box-shadow: 3px 3px 8px #6F6F6F;
+  background-color: #9759E3;
+  cursor: pointer;
+}
+
+#star-rating-text {
+  padding-left: 15px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 550px) {
+.container {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  .deck {
+    max-width: 70%;
+    min-height: auto;
+    padding-bottom: 17px;
+  }
+
+  .deck .card {
+    max-width:60px;
+    max-height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .score-panel {
+    max-width: 70%;
+    padding-bottom: 0;
+    display: block;
+    text-align: center;
+    line-height: 1.7em;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+}
+@media screen and (min-width: 552px) and (max-width: 780px) {
+ 
+ .container {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.deck {
+    max-width: 85%;
+    min-height: auto;
+    padding-bottom: 17px;
+  }
+
+  .deck .card {
+    max-height: 32%;
+    
+    margin-bottom: 17px;
+  }
+
+  .score-panel {
+    max-width: 100%;
+    padding-bottom: 0;
+    display: block;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 10px 0;
+  }
+}
+
+#winner-popup.zoomIn {
+  animation-delay: 1s;
+}
+#winner-popup.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+  @keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+
+.deck .card.shake {
+-webkit-animation-name: shake;
+animation-name: shake;
+-webkit-animation-duration: 1s;
+animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+}
+@-webkit-keyframes shake {
+0%, 100% {
+-webkit-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+}
+10%, 30%, 50%, 70%, 90% {
+-webkit-transform: translate3d(-10px, 0, 0);
+transform: translate3d(-10px, 0, 0);
+}
+20%, 40%, 60%, 80% {
+-webkit-transform: translate3d(10px, 0, 0);
+transform: translate3d(10px, 0, 0);
+}
+}
+

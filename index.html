@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Memory Game</title>
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body> 
+    <div class="container">
+        <header>
+            <h1>Matching Memory Game</h1>
+        </header>
+       <section class="score-panel">
+          <div class="star-rating">
+              <ul class="stars">
+                  <li><i class="fa fa-star" id="starThree"></i></li>
+                  <li><i class="fa fa-star" id="starTwo"></i></li>
+                  <li><i class="fa fa-star" id="starOne"></i></li>
+            </ul>
+          <span class="moves" id="moves">0</span><span id="movesText"> Moves</span>
+          </div>
+          <div>
+            <span class="timer" id="timer">00:00:00</span>
+           </div>
+          <div class="restart" id="restart">
+                <span id="restart-text">Restart: </span><i class="fa fa-repeat"></i>
+            </div>
+        </section>
+
+        <ul class="deck">
+        </ul>
+    </div>
+
+    <!-- winner pop up modal from w3school -->
+    <div id="winner-popup" class="popup zoomIn">
+             <!-- Popup -->
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>Congratulations</h2>
+        <h3>You have completed the game in <span class="minutes">0</span> minutes and <span class="seconds">0</span> seconds.</h3>
+        <h3>Total moves made <span id="total-moves">0</span><span id="star-rating-text"> Star Rating: </span><span id="total-stars">0</span> out of 3</h3>
+        <button type="button" class="button" id="play-again">
+          Press the button to play again!!
+        </button>
+      </div>
+     </div>
+     <script src="js/dist/easytimer.min.js"></script>
+    <script>
+      var timerInstance = new Timer();
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html>

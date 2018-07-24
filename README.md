@@ -1,13 +1,13 @@
-##Memory Game Project
+## Memory Game Project
 
-Beat the Clock Memory Game
+# Beat the Clock Memory Game
 This game tests your memory and challenges you to match the cards in as few moves as possible before the game clock runs out.
 This project is part of the Udacity FEND Nanodegree program.
 Was a real challenge for me 
 
-You can play the game in your browser by clicking here : https://melsdesign.github.io/Udacity-Memory-Game-Project/
+# You can play the game in your browser by clicking here : https://melsdesign.github.io/Udacity-Memory-Game-Project/
 
-How to Play
+# How to Play
 Click here to load the game into your browser:https://melsdesign.github.io/Udacity-Memory-Game-Project/
 
 The key to the game is to remember the card symbols and match the pairs in as few tries (moves) as possible.
